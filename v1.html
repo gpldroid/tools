@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات مجانية - Free Tools</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0025c3;
+            --secondary-color: #FF181B;
+            --accent-color: #00c3ff;
+            --light-color: #f8f8ff;
+            --dark-color: #1e1e1e;
+            --success-color: #4CAF50;
+            --warning-color: #ffc107;
+            --card-shadow: 0 5px 30px 0 rgba(0,0,0,.05);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            font-family: 'Tajawal', 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo-text span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--secondary-color);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 30px 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #0025c3 0%, #1f3ad2 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .tool-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .tool-card p {
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .tool-btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary-color), #334ee0);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .tool-btn:hover {
+            background: linear-gradient(to right, #001a9e, #1f3ad2);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* Tool Pages */
+        .tool-page {
+            display: none;
+        }
+        
+        .tool-page.active {
+            display: block;
+        }
+        
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .page-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .back-btn {
+            background: #f0f0f0;
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .back-btn:hover {
+            background: #e0e0e0;
+        }
+        
+        .tool-wrapper {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+        }
+        
+        .tool-wrapper h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .text-area {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1rem;
+            resize: vertical;
+            margin-bottom: 20px;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .text-area:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 37, 195, 0.1);
+        }
+        
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary-color), #4461ee);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(to right, #00c3ff, #44eeee);
+        }
+        
+        .btn-success {
+            background: linear-gradient(to right, var(--success-color), #66bb6a);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(to right, var(--warning-color), #ffca28);
+            color: #333;
+        }
+        
+        .btn-danger {
+            background: linear-gradient(to right, var(--secondary-color), #ff5252);
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .input-group input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .info-section {
+            background: #f9f9ff;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            border-right: 4px solid var(--primary-color);
+        }
+        
+        .info-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .info-section ul {
+            padding-right: 20px;
+        }
+        
+        .info-section li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .info-section li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            right: -15px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px 0 20px;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-right: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .buttons-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .page-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .input-group {
+                flex-direction: column;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .buttons-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            .tool-wrapper {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-circle">🔧</div>
+                <div class="logo-text">أدوات<span> مجانية</span></div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#" class="nav-link active" data-page="home">الرئيسية</a></li>
+                    <li><a href="#" class="nav-link" data-page="text-tools">أدوات النص</a></li>
+                    <li><a href="#" class="nav-link" data-page="html-to-xml">HTML إلى XML</a></li>
+                    <li><a href="#" class="nav-link" data-page="privacy-policy">مولد سياسة الخصوصية</a></li>
+                    <li><a href="#" class="nav-link" data-page="robots-txt">مولد Robots.txt</a></li>
+                    <li><a href="#" class="nav-link" data-page="terms-conditions">مولد الشروط والأحكام</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Page -->
+        <section id="home-page" class="tool-page active">
+            <div class="hero">
+                <h1>مرحباً بك في موقع الأدوات المجانية</h1>
+                <p>مجموعة متكاملة من الأدوات المجانية لتسهيل عملك على الإنترنت. كل الأدوات متاحة للاستخدام الفوري بدون تسجيل أو رسوم.</p>
+                <div class="hero-btns">
+                    <a href="#tools" class="tool-btn" style="margin-left: 10px;">استكشاف الأدوات</a>
+                    <a href="#how-to-use" class="tool-btn" style="background: rgba(255,255,255,0.2); border: 1px solid white;">كيفية الاستخدام</a>
+                </div>
+            </div>
+            
+            <h2 id="tools" style="text-align: center; margin-bottom: 30px; color: var(--primary-color);">أدواتنا المجانية</h2>
+            
+            <div class="tools-grid">
+                <!-- Text Tools Card -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3>أدوات النص</h3>
+                    <p>مجموعة من الأدوات لتحرير النصوص وتنسيقها: تحويل الحروف، إزالة المسافات الزائدة، استبدال النصوص والمزيد.</p>
+                    <a href="#" class="tool-btn" data-page="text-tools">استخدم الأداة</a>
+                </div>
+                
+                <!-- HTML to XML Card -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>محول HTML إلى XML</h3>
+                    <p>تحويل أكواد HTML إلى تنسيق XML بسهولة. مناسب للمطورين وأصحاب المواقع.</p>
+                    <a href="#" class="tool-btn" data-page="html-to-xml">استخدم الأداة</a>
+                </div>
+                
+                <!-- Privacy Policy Generator Card -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>مولد سياسة الخصوصية</h3>
+                    <p>أنشئ سياسة خصوصية احترافية لموقعك الإلكتروني في دقائق معدودة.</p>
+                    <a href="#" class="tool-btn" data-page="privacy-policy">استخدم الأداة</a>
+                </div>
+                
+                <!-- Robots.txt Generator Card -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>مولد Robots.txt</h3>
+                    <p>أنشئ ملف robots.txt لموقعك بسهولة. يدعم منصتي WordPress وBlogger.</p>
+                    <a href="#" class="tool-btn" data-page="robots-txt">استخدم الأداة</a>
+                </div>
+                
+                <!-- Terms & Conditions Generator Card -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>مولد الشروط والأحكام</h3>
+                    <p>أنشئ صفحة شروط وأحكام احترافية لموقعك الإلكتروني أو متجرك.</p>
+                    <a href="#" class="tool-btn" data-page="terms-conditions">استخدم الأداة</a>
+                </div>
+            </div>
+            
+            <div class="info-section" id="how-to-use">
+                <h3>كيفية استخدام موقعنا</h3>
+                <p>موقعنا صُمم ليكون سهل الاستخدام للجميع. اتبع هذه الخطوات البسيطة:</p>
+                <ul>
+                    <li>اختر الأداة التي تريد استخدامها من القائمة الرئيسية أو من صفحة الأدوات.</li>
+                    <li>اتبع التعليمات الموجودة في صفحة كل أداة.</li>
+                    <li>أدخل البيانات المطلوبة في الحقول المخصصة.</li>
+                    <li>انقر على الزر المناسب لتنفيذ العملية.</li>
+                    <li>انسخ النتيجة أو حملها حسب الحاجة.</li>
+                </ul>
+                <p style="margin-top: 15px;">جميع أدواتنا مجانية 100% ولا تحتاج إلى تسجيل. نحن نعمل باستمرار على إضافة أدوات جديدة لخدمتكم.</p>
+            </div>
+        </section>
+
+        <!-- Text Tools Page -->
+        <section id="text-tools-page" class="tool-page">
+            <div class="page-header">
+                <h1 class="page-title">أدوات النص المجانية</h1>
+                <a href="#" class="back-btn" data-page="home">
+                    <i class="fas fa-arrow-right"></i> العودة للرئيسية
+                </a>
+            </div>
+            
+            <div class="tool-wrapper">
+                <h2>أدوات تحرير النصوص</h2>
+                <textarea class="text-area" id="textInput" placeholder="أدخل النص هنا..."></textarea>
+                
+                <div class="buttons-grid">
+                    <button class="btn btn-primary" id="upperCase">حروف كبيرة</button>
+                    <button class="btn btn-primary" id="lowerCase">حروف صغيرة</button>
+                    <button class="btn btn-primary" id="swapCase">تبديل الحالة</button>
+                    <button class="btn btn-primary" id="randomCase">حالة عشوائية</button>
+                    <button class="btn btn-secondary" id="removeSpaces">إزالة المسافات الزائدة</button>
+                    <button class="btn btn-secondary" id="removeLines">إزالة الأسطر الفارغة</button>
+                    <button class="btn btn-secondary" id="removeDuplicates">إزالة الأسطر المكررة</button>
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" id="findText" placeholder="البحث عن...">
+                    <input type="text" id="replaceText" placeholder="استبدال بـ...">
+                </div>
+                
+                <button class="btn btn-warning" id="replaceBtn" style="width: 100%;">
+                    <i class="fas fa-exchange-alt"></i> استبدال
+                </button>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-danger" id="clearText">
+                        <i class="fas fa-trash"></i> مسح النص
+                    </button>
+                    <button class="btn btn-success" id="copyText">
+                        <i class="fas fa-copy"></i> نسخ النص
+                    </button>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h3>كيفية استخدام أدوات النص</h3>
+                <ul>
+                    <li><strong>حروف كبيرة:</strong> تحويل كل النص إلى حروف كبيرة (CAPITAL).</li>
+                    <li><strong>حروف صغيرة:</strong> تحويل كل النص إلى حروف صغيرة.</li>
+                    <li><strong>تبديل الحالة:</strong> تبديل حالة الحروف من كبيرة إلى صغيرة والعكس.</li>
+                    <li><strong>حالة عشوائية:</strong> تحويل النص إلى حالة عشوائية بين الحروف الكبيرة والصغيرة.</li>
+                    <li><strong>إزالة المسافات الزائدة:</strong> إزالة المسافات الزائدة بين الكلمات.</li>
+                    <li><strong>إزالة الأسطر الفارغة:</strong> إزالة الأسطر الفارغة الزائدة من النص.</li>
+                    <li><strong>إزالة الأسطر المكررة:</strong> إزالة الأسطر المكررة في النص.</li>
+                    <li><strong>استبدال النص:</strong> البحث عن نص معين واستبداله بنص آخر.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- HTML to XML Page -->
+        <section id="html-to-xml-page" class="tool-page">
+            <div class="page-header">
+                <h1 class="page-title">محول HTML إلى XML</h1>
+                <a href="#" class="back-btn" data-page="home">
+                    <i class="fas fa-arrow-right"></i> العودة للرئيسية
+                </a>
+            </div>
+            
+            <div class="tool-wrapper">
+                <h2>تحويل HTML إلى XML</h2>
+                <textarea class="text-area" id="htmlInput" placeholder="أدخل كود HTML هنا..."></textarea>
+                <button class="btn btn-primary" id="convertBtn" style="width: 100%; margin-bottom: 20px;">
+                    <i class="fas fa-exchange-alt"></i> تحويل إلى XML
+                </button>
+                
+                <textarea class="text-area" id="xmlOutput" placeholder="النتيجة ستظهر هنا..." readonly></textarea>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-success" id="downloadXml">
+                        <i class="fas fa-download"></i> تحميل XML
+                    </button>
+                    <button class="btn btn-secondary" id="copyXml">
+                        <i class="fas fa-copy"></i> نسخ XML
+                    </button>
+                    <button class="btn btn-danger" id="clearXml">
+                        <i class="fas fa-trash"></i> مسح الكل
+                    </button>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h3>كيفية استخدام المحول</h3>
+                <ul>
+                    <li>الصق كود HTML في الحقل العلوي.</li>
+                    <li>انقر على زر "تحويل إلى XML".</li>
+                    <li>ستظهر النتيجة في الحقل السفلي.</li>
+                    <li>يمكنك نسخ النتيجة أو تحميلها كملف XML.</li>
+                </ul>
+                <p><strong>ملاحظة:</strong> هذا المحول يقوم بتحويل بسيط للكود، وللتحويل المعقد يرجى استخدام أدوات متخصصة.</p>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Generator Page -->
+        <section id="privacy-policy-page" class="tool-page">
+            <div class="page-header">
+                <h1 class="page-title">مولد سياسة الخصوصية</h1>
+                <a href="#" class="back-btn" data-page="home">
+                    <i class="fas fa-arrow-right"></i> العودة للرئيسية
+                </a>
+            </div>
+            
+            <div class="tool-wrapper">
+                <h2>أنشئ سياسة خصوصية لموقعك</h2>
+                <div class="input-group">
+                    <input type="text" id="ppWebsiteName" placeholder="اسم الموقع">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="ppWebsiteUrl" placeholder="رابط الموقع (مثال: https://example.com)">
+                </div>
+                <div class="input-group">
+                    <input type="email" id="ppEmail" placeholder="البريد الإلكتروني">
+                </div>
+                
+                <button class="btn btn-primary" id="generatePP" style="width: 100%; margin-bottom: 20px;">
+                    <i class="fas fa-magic"></i> توليد سياسة الخصوصية
+                </button>
+                
+                <textarea class="text-area" id="ppOutput" placeholder="سياسة الخصوصية ستظهر هنا..."></textarea>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-success" id="copyPP">
+                        <i class="fas fa-copy"></i> نسخ السياسة
+                    </button>
+                    <button class="btn btn-secondary" id="downloadPP">
+                        <i class="fas fa-download"></i> تحميل كملف نصي
+                    </button>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h3>معلومات هامة</h3>
+                <p>سياسة الخصوصية التي نولدها هي نموذج عام وقد تحتاج إلى تعديلها لتناسب موقعك بالضبط. ننصحك بـ:</p>
+                <ul>
+                    <li>مراجعة السياسة مع محامٍ مختص إذا كان موقعك يجمع بيانات حساسة.</li>
+                    <li>تعديل السياسة لتعكس ممارسات موقعك الحقيقية في جمع البيانات.</li>
+                    <li>تحديث السياسة بشكل دوري مع تغير القوانين أو تغير ممارسات موقعك.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Robots.txt Generator Page -->
+        <section id="robots-txt-page" class="tool-page">
+            <div class="page-header">
+                <h1 class="page-title">مولد ملف Robots.txt</h1>
+                <a href="#" class="back-btn" data-page="home">
+                    <i class="fas fa-arrow-right"></i> العودة للرئيسية
+                </a>
+            </div>
+            
+            <div class="tool-wrapper">
+                <h2>أنشئ ملف robots.txt لموقعك</h2>
+                <div class="input-group">
+                    <input type="text" id="rtWebsiteUrl" placeholder="رابط الموقع (مثال: https://example.com)">
+                </div>
+                
+                <div class="input-group">
+                    <select id="rtPlatform" style="padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; width: 100%;">
+                        <option value="wordpress">WordPress</option>
+                        <option value="blogger">Blogger</option>
+                        <option value="general">عام</option>
+                    </select>
+                </div>
+                
+                <button class="btn btn-primary" id="generateRT" style="width: 100%; margin-bottom: 20px;">
+                    <i class="fas fa-robot"></i> توليد ملف Robots.txt
+                </button>
+                
+                <textarea class="text-area" id="rtOutput" placeholder="محتوى ملف robots.txt سيظهر هنا..."></textarea>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-success" id="copyRT">
+                        <i class="fas fa-copy"></i> نسخ المحتوى
+                    </button>
+                    <button class="btn btn-secondary" id="downloadRT">
+                        <i class="fas fa-download"></i> تحميل كملف robots.txt
+                    </button>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h3>ما هو ملف robots.txt؟</h3>
+                <p>ملف robots.txt هو ملف نصي يخبر محركات البحث بأي صفحات أو ملفات يمكنها الزحف إليها أو لا يمكنها الزحف إليها على موقعك.</p>
+                <p><strong>كيفية الاستخدام:</strong></p>
+                <ul>
+                    <li>انسخ محتوى الملف الذي تم توليده.</li>
+                    <li>أنشئ ملفاً جديداً باسم "robots.txt" في المجلد الرئيسي لموقعك.</li>
+                    <li>الصق المحتوى في الملف واحفظه.</li>
+                    <li>يمكنك الوصول إلى الملف عبر الرابط: yourdomain.com/robots.txt</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Terms & Conditions Generator Page -->
+        <section id="terms-conditions-page" class="tool-page">
+            <div class="page-header">
+                <h1 class="page-title">مولد الشروط والأحكام</h1>
+                <a href="#" class="back-btn" data-page="home">
+                    <i class="fas fa-arrow-right"></i> العودة للرئيسية
+                </a>
+            </div>
+            
+            <div class="tool-wrapper">
+                <h2>أنشئ شروط وأحكام لموقعك</h2>
+                <div class="input-group">
+                    <input type="text" id="tcWebsiteName" placeholder="اسم الموقع">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="tcWebsiteUrl" placeholder="رابط الموقع">
+                </div>
+                <div class="input-group">
+                    <input type="email" id="tcEmail" placeholder="البريد الإلكتروني">
+                </div>
+                
+                <button class="btn btn-primary" id="generateTC" style="width: 100%; margin-bottom: 20px;">
+                    <i class="fas fa-file-contract"></i> توليد الشروط والأحكام
+                </button>
+                
+                <textarea class="text-area" id="tcOutput" placeholder="الشروط والأحكام ستظهر هنا..."></textarea>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-success" id="copyTC">
+                        <i class="fas fa-copy"></i> نسخ الشروط
+                    </button>
+                    <button class="btn btn-secondary" id="downloadTC">
+                        <i class="fas fa-download"></i> تحميل كملف نصي
+                    </button>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h3>معلومات عن الشروط والأحكام</h3>
+                <p>صفحة الشروط والأحكام هي وثيقة قانونية تحدد القواعد والمتطلبات لاستخدام موقعك الإلكتروني.</p>
+                <p><strong>لماذا تحتاجها:</strong></p>
+                <ul>
+                    <li>تحديد مسؤوليات المستخدمين وحدود استخدام الموقع.</li>
+                    <li>حماية حقوق الملكية الفكرية للموقع.</li>
+                    <li>تحديد القيود والمسؤوليات القانونية.</li>
+                    <li>توضيح سياسات الدفع والاسترداد (إذا كان هناك متجر).</li>
+                </ul>
+                <p><strong>تنبيه:</strong> النموذج الذي نقدمه هو نموذج عام وقد تحتاج إلى استشارة قانونية لتخصيصه لموقعك.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن الموقع</h3>
+                    <p>موقع أدوات مجانية يوفر مجموعة من الأدوات المفيدة للمطورين وأصحاب المواقع. كل الأدوات مجانية 100% ولا تحتاج إلى تسجيل.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>الأدوات المتاحة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="text-tools">أدوات النص</a></li>
+                        <li><a href="#" data-page="html-to-xml">محول HTML إلى XML</a></li>
+                        <li><a href="#" data-page="privacy-policy">مولد سياسة الخصوصية</a></li>
+                        <li><a href="#" data-page="robots-txt">مولد Robots.txt</a></li>
+                        <li><a href="#" data-page="terms-conditions">مولد الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>معلومات قانونية</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="privacy-policy">سياسة الخصوصية</a></li>
+                        <li><a href="#" data-page="terms-conditions">الشروط والأحكام</a></li>
+                        <li><a href="#">الإبلاغ عن مشكلة</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; <span id="currentYear"></span> - أدوات مجانية | تم التطوير بكل ❤️ لخدمتكم</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation System
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Navigation between pages
+            const navLinks = document.querySelectorAll('.nav-link, .back-btn, .tool-btn[data-page]');
+            const pages = document.querySelectorAll('.tool-page');
+            
+            function showPage(pageId) {
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Show selected page
+                document.getElementById(pageId).classList.add('active');
+                
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageId.replace('-page', '')) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Close mobile menu if open
+                navMenu.classList.remove('show');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageName = this.getAttribute('data-page');
+                    showPage(`${pageName}-page`);
+                });
+            });
+            
+            // Text Tools Functionality
+            const textInput = document.getElementById('textInput');
+            const upperCaseBtn = document.getElementById('upperCase');
+            const lowerCaseBtn = document.getElementById('lowerCase');
+            const swapCaseBtn = document.getElementById('swapCase');
+            const randomCaseBtn = document.getElementById('randomCase');
+            const removeSpacesBtn = document.getElementById('removeSpaces');
+            const removeLinesBtn = document.getElementById('removeLines');
+            const removeDuplicatesBtn = document.getElementById('removeDuplicates');
+            const findText = document.getElementById('findText');
+            const replaceText = document.getElementById('replaceText');
+            const replaceBtn = document.getElementById('replaceBtn');
+            const clearTextBtn = document.getElementById('clearText');
+            const copyTextBtn = document.getElementById('copyText');
+            
+            // Text tools functions
+            upperCaseBtn.addEventListener('click', () => {
+                textInput.value = textInput.value.toUpperCase();
+            });
+            
+            lowerCaseBtn.addEventListener('click', () => {
+                textInput.value = textInput.value.toLowerCase();
+            });
+            
+            swapCaseBtn.addEventListener('click', () => {
+                textInput.value = textInput.value.split('').map(char => {
+                    return char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
+                }).join('');
+            });
+            
+            randomCaseBtn.addEventListener('click', () => {
+                textInput.value = textInput.value.split('').map(char => {
+                    return Math.random() > 0.5 ? char.toUpperCase() : char.toLowerCase();
+                }).join('');
+            });
+            
+            removeSpacesBtn.addEventListener('click', () => {
+                textInput.value = textInput.value.replace(/\s+/g, ' ').trim();
+            });
+            
+            removeLinesBtn.addEventListener('click', () => {
+                textInput.value = textInput.value.replace(/(\r\n|\n|\r){2,}/g, '\n').trim();
+            });
+            
+            removeDuplicatesBtn.addEventListener('click', () => {
+                const lines = textInput.value.split("\n");
+                const uniqueLines = [...new Set(lines)];
+                textInput.value = uniqueLines.join("\n").trim();
+            });
+            
+            replaceBtn.addEventListener('click', () => {
+                const find = findText.value.trim();
+                const replaceWith = replaceText.value.trim();
+                
+                if (find === "") {
+                    alert("الرجاء إدخال نص للبحث عنه");
+                    return;
+                }
+                
+                const regex = new RegExp(find, 'g');
+                textInput.value = textInput.value.replace(regex, replaceWith);
+            });
+            
+            clearTextBtn.addEventListener('click', () => {
+                if (confirm("هل أنت متأكد من مسح النص؟")) {
+                    textInput.value = "";
+                }
+            });
+            
+            copyTextBtn.addEventListener('click', () => {
+                if (textInput.value.trim() === "") {
+                    alert("لا يوجد نص للنسخ");
+                    return;
+                }
+                
+                textInput.select();
+                document.execCommand('copy');
+                alert("تم نسخ النص إلى الحافظة");
+            });
+            
+            // HTML to XML Converter
+            const htmlInput = document.getElementById('htmlInput');
+            const xmlOutput = document.getElementById('xmlOutput');
+            const convertBtn = document.getElementById('convertBtn');
+            const downloadXmlBtn = document.getElementById('downloadXml');
+            const copyXmlBtn = document.getElementById('copyXml');
+            const clearXmlBtn = document.getElementById('clearXml');
+            
+            convertBtn.addEventListener('click', () => {
+                const htmlCode = htmlInput.value;
+                if (htmlCode.trim() === "") {
+                    alert("الرجاء إدخال كود HTML");
+                    return;
+                }
+                
+                // Simple HTML to XML conversion
+                const encodedCode = htmlCode
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+                
+                const xmlCode = `<?xml version="1.0" encoding="UTF-8"?>\n<converted>\n${encodedCode}\n</converted>`;
+                xmlOutput.value = xmlCode;
+            });
+            
+            copyXmlBtn.addEventListener('click', () => {
+                if (xmlOutput.value.trim() === "") {
+                    alert("لا يوجد محتوى للنسخ");
+                    return;
+                }
+                
+                xmlOutput.select();
+                document.execCommand('copy');
+                alert("تم نسخ كود XML إلى الحافظة");
+            });
+            
+            clearXmlBtn.addEventListener('click', () => {
+                htmlInput.value = "";
+                xmlOutput.value = "";
+            });
+            
+            downloadXmlBtn.addEventListener('click', () => {
+                if (xmlOutput.value.trim() === "") {
+                    alert("لا يوجد محتوى للتحميل");
+                    return;
+                }
+                
+                const blob = new Blob([xmlOutput.value], { type: 'text/xml' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'converted.xml';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+            
+            // Privacy Policy Generator
+            const ppWebsiteName = document.getElementById('ppWebsiteName');
+            const ppWebsiteUrl = document.getElementById('ppWebsiteUrl');
+            const ppEmail = document.getElementById('ppEmail');
+            const generatePPBtn = document.getElementById('generatePP');
+            const ppOutput = document.getElementById('ppOutput');
+            const copyPPBtn = document.getElementById('copyPP');
+            const downloadPPBtn = document.getElementById('downloadPP');
+            
+            generatePPBtn.addEventListener('click', () => {
+                const websiteName = ppWebsiteName.value || "موقعك";
+                const websiteUrl = ppWebsiteUrl.value || "https://example.com";
+                const email = ppEmail.value || "contact@example.com";
+                
+                const privacyPolicy = `
+سياسة الخصوصية لموقع ${websiteName}
+
+مرحبًا بك في سياسة الخصوصية الخاصة بـ ${websiteName}. في هذه الوثيقة، نقدم لك معلومات حول كيفية جمعنا واستخدامنا وحماية بياناتك الشخصية عند زيارة موقعنا ${websiteUrl}.
+
+1. المعلومات التي نجمعها
+عند زيارة موقع ${websiteUrl}، قد نجمع بعض المعلومات عنك، بما في ذلك:
+- المعلومات التي تقدمها لنا مباشرة (مثل اسمك، بريدك الإلكتروني)
+- معلومات الزيارات والاستخدام (مثل عنوان IP، نوع المتصفح، صفحات الزيارة)
+
+2. كيفية استخدام معلوماتك
+نستخدم المعلومات التي نجمعها لـ:
+- تقديم وتحسين خدماتنا
+- التواصل معك عند الحاجة
+- تحليل استخدام الموقع لتحسين تجربة المستخدم
+
+3. حماية بياناتك
+نحن نلتزم بحماية بياناتك الشخصية ونستخدم وسائل تقنية وإدارية مناسبة لمنع الوصول غير المصرح به أو استخدام غير قانوني لبياناتك.
+
+4. مشاركة المعلومات
+نحن لا نبيع أو نؤجر أو نشارك بياناتك الشخصية مع أطراف ثالثة لأغراض تسويقية دون موافقتك الصريحة.
+
+5. حقوقك
+لديك الحق في الوصول إلى بياناتك الشخصية التي نحتفظ بها، وتصحيحها، أو طلب حذفها. يمكنك ممارسة هذه الحقوق بالاتصال بنا على ${email}.
+
+6. التغييرات على سياسة الخصوصية
+قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنخطرك بأي تغييرات جوهرية بنشر الإصدار الجديد على هذه الصفحة.
+
+7. الاتصال بنا
+إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا على: ${email}
+
+تاريخ آخر تحديث: ${new Date().toLocaleDateString('ar-SA')}
+                `;
+                
+                ppOutput.value = privacyPolicy.trim();
+            });
+            
+            copyPPBtn.addEventListener('click', () => {
+                if (ppOutput.value.trim() === "") {
+                    alert("لا يوجد محتوى للنسخ");
+                    return;
+                }
+                
+                ppOutput.select();
+                document.execCommand('copy');
+                alert("تم نسخ سياسة الخصوصية إلى الحافظة");
+            });
+            
+            downloadPPBtn.addEventListener('click', () => {
+                if (ppOutput.value.trim() === "") {
+                    alert("لا يوجد محتوى للتحميل");
+                    return;
+                }
+                
+                const blob = new Blob([ppOutput.value], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'privacy-policy.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+            
+            // Robots.txt Generator
+            const rtWebsiteUrl = document.getElementById('rtWebsiteUrl');
+            const rtPlatform = document.getElementById('rtPlatform');
+            const generateRTBtn = document.getElementById('generateRT');
+            const rtOutput = document.getElementById('rtOutput');
+            const copyRTBtn = document.getElementById('copyRT');
+            const downloadRTBtn = document.getElementById('downloadRT');
+            
+            generateRTBtn.addEventListener('click', () => {
+                const websiteUrl = rtWebsiteUrl.value || "https://example.com";
+                const platform = rtPlatform.value;
+                
+                let robotsTxt = "";
+                
+                if (platform === "wordpress") {
+                    robotsTxt = `User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/
+Disallow: /wp-login.php
+Disallow: /wp-signup.php
+Disallow: /wp-trackback
+Disallow: /xmlrpc.php
+Disallow: /feed/
+Disallow: /comments/feed
+
+Allow: /wp-admin/admin-ajax.php
+Allow: /wp-content/uploads/
+
+Sitemap: ${websiteUrl}/sitemap.xml
+Sitemap: ${websiteUrl}/wp-sitemap.xml`;
+                } else if (platform === "blogger") {
+                    robotsTxt = `User-agent: *
+Disallow: /search
+Disallow: /p/
+Disallow: /?m=1
+Disallow: /feeds/posts/default?*redirect=false
+Disallow: /*/search?q=*
+Disallow: /search/label/*?&max-results=*
+Disallow: /search/label/*?updated-max=*
+
+Allow: /search/label/*?max-results=*
+
+Sitemap: ${websiteUrl}/atom.xml?redirect=false&start-index=1&max-results=500`;
+                } else {
+                    robotsTxt = `User-agent: *
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+Sitemap: ${websiteUrl}/sitemap.xml`;
+                }
+                
+                rtOutput.value = robotsTxt;
+            });
+            
+            copyRTBtn.addEventListener('click', () => {
+                if (rtOutput.value.trim() === "") {
+                    alert("لا يوجد محتوى للنسخ");
+                    return;
+                }
+                
+                rtOutput.select();
+                document.execCommand('copy');
+                alert("تم نسخ محتوى robots.txt إلى الحافظة");
+            });
+            
+            downloadRTBtn.addEventListener('click', () => {
+                if (rtOutput.value.trim() === "") {
+                    alert("لا يوجد محتوى للتحميل");
+                    return;
+                }
+                
+                const blob = new Blob([rtOutput.value], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'robots.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+            
+            // Terms & Conditions Generator
+            const tcWebsiteName = document.getElementById('tcWebsiteName');
+            const tcWebsiteUrl = document.getElementById('tcWebsiteUrl');
+            const tcEmail = document.getElementById('tcEmail');
+            const generateTCBtn = document.getElementById('generateTC');
+            const tcOutput = document.getElementById('tcOutput');
+            const copyTCBtn = document.getElementById('copyTC');
+            const downloadTCBtn = document.getElementById('downloadTC');
+            
+            generateTCBtn.addEventListener('click', () => {
+                const websiteName = tcWebsiteName.value || "موقعك";
+                const websiteUrl = tcWebsiteUrl.value || "https://example.com";
+                const email = tcEmail.value || "contact@example.com";
+                
+                const termsConditions = `
+شروط وأحكام استخدام موقع ${websiteName}
+
+مرحبًا بك في موقع ${websiteName} (${websiteUrl}). يرجى قراءة شروط وأحكام الاستخدام هذه بعناية قبل استخدام الموقع. باستخدامك لهذا الموقع، فإنك توافق على الالتزام بهذه الشروط والأحكام.
+
+1. قبول الشروط
+باستخدامك لهذا الموقع، فإنك تقر بأنك قد قرأت وفهمت ووافقت على الالتزام بشروط وأحكام الاستخدام هذه. إذا لم توافق على هذه الشروط، يرجى عدم استخدام الموقع.
+
+2. التغييرات على الشروط
+نحتفظ بالحق في تعديل أو تحديث هذه الشروط والأحكام في أي وقت دون إشعار مسبق. سيتم نشر أي تغييرات على هذه الصفحة، ويستمر استخدامك للموقع بعد التغييرات يشكل موافقتك على الشروط المعدلة.
+
+3. استخدام الموقع
+أنت توافق على استخدام هذا الموقع فقط للأغراض القانونية وبطريقة لا تنتهك حقوق الآخرين أو تقيد أو تمنع استخدام الموقع من قبل أي طرف ثالث.
+
+4. الملكية الفكرية
+جميع المحتويات الموجودة على هذا الموقع، بما في ذلك النصوص والصور والشعارات والتصاميم، محمية بحقوق الملكية الفكرية ولا يجوز نسخها أو توزيعها أو تعديلها دون إذن كتابي مسبق منا.
+
+5. الروابط الخارجية
+قد يحتوي موقعنا على روابط لمواقع خارجية. نحن لا نتحمل أي مسؤولية عن محتوى أو ممارسات الخصوصية لهذه المواقع.
+
+6. الحد من المسؤولية
+نحن لا نتحمل أي مسؤولية عن أي أضرار مباشرة أو غير مباشرة ناتجة عن استخدام أو عدم القدرة على استخدام هذا الموقع.
+
+7. الاتصال بنا
+إذا كان لديك أي أسئلة حول شروط وأحكام الاستخدام هذه، يرجى الاتصال بنا على: ${email}
+
+تاريخ آخر تحديث: ${new Date().toLocaleDateString('ar-SA')}
+                `;
+                
+                tcOutput.value = termsConditions.trim();
+            });
+            
+            copyTCBtn.addEventListener('click', () => {
+                if (tcOutput.value.trim() === "") {
+                    alert("لا يوجد محتوى للنسخ");
+                    return;
+                }
+                
+                tcOutput.select();
+                document.execCommand('copy');
+                alert("تم نسخ الشروط والأحكام إلى الحافظة");
+            });
+            
+            downloadTCBtn.addEventListener('click', () => {
+                if (tcOutput.value.trim() === "") {
+                    alert("لا يوجد محتوى للتحميل");
+                    return;
+                }
+                
+                const blob = new Blob([tcOutput.value], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'terms-conditions.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+        });
+    </script>
+</body>
+</html>
