@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات مجانية متكاملة - موقع الأدوات المجاني</title>
+  <!-- Meta Description و Keywords -->
+<meta name="description" content="موقع أدوات مجانية متكاملة للمطورين والمدونين: أدوات تحرير النصوص، محول HTML إلى XML، منشئ سياسة الخصوصية، منشئ ملف robots.txt، منشئ الشروط والأحكام. جميع الأدوات تعمل مباشرة في المتصفح بدون تسجيل أو دفع.">
+
+<meta name="keywords" content="أدوات مجانية, أدوات للمطورين, محول HTML إلى XML, منشئ سياسة الخصوصية, منشئ robots.txt, منشئ الشروط والأحكام, أدوات تحرير النصوص, أدوات ويب مجانية, أدوات للمدونين, أدوات SEO">
+
+<!-- إصلاح مشكلة عدم الأمان -->
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+
+<!-- Open Graph Tags لوسائل التواصل الاجتماعي -->
+<meta property="og:title" content="موقع الأدوات المجاني | أدوات متكاملة للمطورين والمدونين">
+<meta property="og:description" content="مجموعة من الأدوات المجانية المفيدة للمطورين والمدونين وأصحاب المواقع. جميع الأدوات تعمل مباشرة في المتصفح بدون حاجة للتسجيل أو الدفع.">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2017/08/05/11/24/logo-2582748_1280.png">
+<meta property="og:url" content="https://gpldroid.github.io/tools">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="موقع الأدوات المجاني">
+<meta property="og:locale" content="ar_AR">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="موقع الأدوات المجاني | أدوات متكاملة للمطورين والمدونين">
+<meta name="twitter:description" content="أدوات مجانية متكاملة للمطورين والمدونين تعمل مباشرة في المتصفح">
+<meta name="twitter:image" content="https://cdn.pixabay.com/photo/2017/08/05/11/24/logo-2582748_1280.png">
+<meta name="twitter:site" content="@your_twitter">
+
+<!-- Mobile Optimization -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta name="theme-color" content="#0025c3">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://gpldroid.github.io/tools">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "موقع الأدوات المجاني",
+  "url": "https://gpldroid.github.io/tools",
+  "description": "موقع شامل يضم مجموعة من الأدوات المجانية المفيدة للمطورين والمدونين وأصحاب المواقع",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "موقع الأدوات المجاني"
+  },
+  "keywords": "أدوات مجانية, أدوات للمطورين, محول HTML إلى XML, منشئ سياسة الخصوصية, منشئ robots.txt, منشئ الشروط والأحكام",
+  "inLanguage": "ar"
+}
+</script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Boxicons and Bootstrap Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand logo" href="#home">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/05/11/24/logo-2582748_1280.png" alt="Logo">
+                        <h1>موقع <span>الأدوات</span> المجاني</h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon" style="filter: invert(1);">☰</span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#home" data-page="home">الرئيسية</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#text-tools" data-page="text-tools">أدوات النصوص</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#html-xml" data-page="html-xml">محول HTML إلى XML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#privacy-policy" data-page="privacy-policy">منشئ سياسة الخصوصية</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#robots-txt" data-page="robots-txt">منشئ ملف Robots.txt</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#terms" data-page="terms">منشئ الشروط والأحكام</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Home Page -->
+            <div id="home-page" class="tool-page active">
+                <section class="hero">
+                    <div class="container">
+                        <h2>أدوات مجانية متكاملة للمطورين والمدونين</h2>
+                        <p>موقع شامل يضم مجموعة من الأدوات المجانية المفيدة للمطورين والمدونين وأصحاب المواقع. جميع الأدوات تعمل مباشرة في المتصفح بدون حاجة للتسجيل أو الدفع.</p>
+                        <a href="#tools" class="tool-btn" style="font-size: 1.2rem; padding: 15px 40px;">استكشاف الأدوات</a>
+                    </div>
+                </section>
+                
+                <h2 class="text-center mb-4" style="color: var(--primary-color);">جميع الأدوات المتاحة</h2>
+                <div class="tools-grid" id="tools">
+                    <!-- Text Tools -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="bi bi-text-left"></i>
+                            <h3>أدوات النصوص</h3>
+                        </div>
+                        <div class="tool-body">
+                            <p>أدوات متقدمة لتحرير النصوص وتنسيقها. تحويل الحروف كبيرة/صغيرة، إزالة الأسطر المكررة، إزالة المسافات الزائدة، واستبدال النصوص بسهولة.</p>
+                            <a href="#text-tools" class="tool-btn" data-page="text-tools">فتح الأداة</a>
+                        </div>
+                    </div>
+                    
+                    <!-- HTML to XML Converter -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="bi bi-code-slash"></i>
+                            <h3>محول HTML إلى XML</h3>
+                        </div>
+                        <div class="tool-body">
+                            <p>أداة لتحويل كود HTML إلى تنسيق XML بسهولة. مثالية للمطورين الذين يحتاجون لتحويل صفحات الويب إلى بيانات منظمة.</p>
+                            <a href="#html-xml" class="tool-btn" data-page="html-xml">فتح الأداة</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Policy Generator -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="bi bi-shield-check"></i>
+                            <h3>منشئ سياسة الخصوصية</h3>
+                        </div>
+                        <div class="tool-body">
+                            <p>أنشئ صفحة سياسة خصوصية احترافية لموقعك في دقائق. فقط أدخل معلومات موقعك واحصل على سياسة خصوصية جاهزة.</p>
+                            <a href="#privacy-policy" class="tool-btn" data-page="privacy-policy">فتح الأداة</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Robots.txt Generator -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="bi bi-robot"></i>
+                            <h3>منشئ ملف Robots.txt</h3>
+                        </div>
+                        <div class="tool-body">
+                            <p>أنشئ ملف robots.txt مثالي لموقعك لتحسين فهرسة محركات البحث. اختر منصة موقعك واحصل على كود جاهز.</p>
+                            <a href="#robots-txt" class="tool-btn" data-page="robots-txt">فتح الأداة</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Terms & Conditions Generator -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <i class="bi bi-file-text"></i>
+                            <h3>منشئ الشروط والأحكام</h3>
+                        </div>
+                        <div class="tool-body">
+                            <p>أنشئ صفحة شروط وأحكام احترافية لموقعك بسهولة. أدخل معلومات موقعك واحصل على صفحة جاهزة للاستخدام.</p>
+                            <a href="#terms" class="tool-btn" data-page="terms">فتح الأداة</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <h3 style="color: var(--primary-color);">مميزات موقعنا</h3>
+                    <div class="row mt-4">
+                        <div class="col-md-4 mb-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100">
+                                <i class="bi bi-lightning-charge-fill" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                                <h4>سريع وسهل الاستخدام</h4>
+                                <p>جميع الأدوات تعمل مباشرة في المتصفح بدون حاجة لتحميل أو تثبيت أي برامج.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100">
+                                <i class="bi bi-shield-check" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                                <h4>آمن وخاص</h4>
+                                <p>لا نقوم بحفظ أو تخزين أي بيانات تدخلها في أدواتنا. خصوصيتك محمية بالكامل.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="p-4 bg-white rounded shadow-sm h-100">
+                                <i class="bi bi-globe" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                                <h4>يعمل على جميع الأجهزة</h4>
+                                <p>الموقع متوافق مع جميع المتصفحات ويعمل بشكل ممتاز على الهواتف والأجهزة اللوحية.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Text Tools Page -->
+            <div id="text-tools-page" class="tool-page">
+                <a href="#home" class="back-home" data-page="home">
+                    <i class="bi bi-arrow-right"></i> العودة إلى الرئيسية
+                </a>
+                
+                <div class="page-header">
+                    <h2>أدوات النصوص المجانية</h2>
+                    <p>أداة متكاملة لتحرير النصوص وتنسيقها. يمكنك تحويل النص إلى حروف كبيرة أو صغيرة، إزالة الأسطر والمسافات الزائدة، واستبدال النصوص بسهولة.</p>
+                </div>
+                
+                <div class="text-tool">
+                    <textarea id="text-input" placeholder="أدخل النص الذي تريد تحريره هنا..."></textarea>
+                    
+                    <div class="buttons">
+                        <button id="upper-btn">تحويل لحروف كبيرة</button>
+                        <button id="lower-btn">تحويل لحروف صغيرة</button>
+                        <button id="swap-btn">تبديل الحروف</button>
+                        <button id="random-btn">حروف عشوائية</button>
+                        <button id="extra-spaces-btn">إزالة المسافات الزائدة</button>
+                        <button id="extra-lines-btn">إزالة الأسطر الفارغة</button>
+                        <button id="duplicate-lines-btn">إزالة الأسطر المكررة</button>
+                    </div>
+                    
+                    <div class="replace-section">
+                        <input id="find-input" placeholder="ابحث عن...">
+                        <input id="replace-input" placeholder="استبدل بـ...">
+                    </div>
+                    
+                    <button id="replace-btn" style="width: 100%; padding: 12px; margin-bottom: 15px; background: linear-gradient(to right, #00c3ff, #54fcfc); color: white; border: none; border-radius: 8px; font-weight: 500;">استبدال النص</button>
+                    
+                    <div class="clear-copy">
+                        <button id="clear-btn" class="clear">
+                            <i class="bi bi-trash3"></i> مسح النص
+                        </button>
+                        <button id="copy-btn" class="copy">
+                            <i class="bi bi-clipboard-check"></i> نسخ النص
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- HTML to XML Converter Page -->
+            <div id="html-xml-page" class="tool-page">
+                <a href="#home" class="back-home" data-page="home">
+                    <i class="bi bi-arrow-right"></i> العودة إلى الرئيسية
+                </a>
+                
+                <div class="page-header">
+                    <h2>محول HTML إلى XML</h2>
+                    <p>أداة لتحويل كود HTML إلى تنسيق XML بسهولة. أدخل كود HTML الخاص بك في الحقل الأول ثم انقر على "تحويل إلى XML" للحصول على النتيجة.</p>
+                </div>
+                
+                <div class="converter-tool">
+                    <textarea id="html-input" placeholder="أدخل كود HTML هنا..."></textarea>
+                    
+                    <div class="btn-group">
+                        <button id="convert-xml-btn">تحويل إلى XML</button>
+                        <button id="clear-xml-btn">مسح الكود</button>
+                        <button id="copy-xml-btn">نسخ XML</button>
+                    </div>
+                    
+                    <textarea id="xml-output" placeholder="ستظهر نتيجة XML هنا..." readonly></textarea>
+                    
+                    <div class="text-center mt-3">
+                        <button id="download-xml-btn" class="tool-btn">تحميل ملف XML</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Privacy Policy Generator Page -->
+            <div id="privacy-policy-page" class="tool-page">
+                <a href="#home" class="back-home" data-page="home">
+                    <i class="bi bi-arrow-right"></i> العودة إلى الرئيسية
+                </a>
+                
+                <div class="page-header">
+                    <h2>منشئ سياسة الخصوصية</h2>
+                    <p>أنشئ صفحة سياسة خصوصية احترافية لموقعك في دقائق. فقط أدخل المعلومات الأساسية عن موقعك وانقر على "توليد".</p>
+                </div>
+                
+                <div class="privacy-tool">
+                    <input type="text" id="pp-websitename" placeholder="اسم الموقع">
+                    <input type="text" id="pp-websiteurl" placeholder="رابط الموقع (مثال: https://example.com)">
+                    <input type="email" id="pp-email" placeholder="البريد الإلكتروني">
+                    
+                    <button id="generate-privacy-btn" class="generate-btn">توليد سياسة الخصوصية</button>
+                    
+                    <div id="privacy-result" class="result" style="display: none;"></div>
+                </div>
+            </div>
+            
+            <!-- Robots.txt Generator Page -->
+            <div id="robots-txt-page" class="tool-page">
+                <a href="#home" class="back-home" data-page="home">
+                    <i class="bi bi-arrow-right"></i> العودة إلى الرئيسية
+                </a>
+                
+                <div class="page-header">
+                    <h2>منشئ ملف Robots.txt</h2>
+                    <p>أنشئ ملف robots.txt مثالي لموقعك لتحسين فهرسة محركات البحث. اختر منصة موقعك وأدخل رابط موقعك.</p>
+                </div>
+                
+                <div class="robots-tool">
+                    <input type="text" id="robots-url" placeholder="رابط الموقع (مثال: https://example.com)">
+                    
+                    <select id="robots-platform">
+                        <option value="blogger">Blogger</option>
+                        <option value="wordpress">WordPress</option>
+                        <option value="general">موقع عام</option>
+                    </select>
+                    
+                    <button id="generate-robots-btn" class="generate-btn">توليد ملف Robots.txt</button>
+                    
+                    <div id="robots-result" class="result" style="display: none;"></div>
+                    
+                    <div class="text-center mt-3">
+                        <button id="copy-robots-btn" class="tool-btn" style="display: none;">نسخ المحتوى</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Terms & Conditions Generator Page -->
+            <div id="terms-page" class="tool-page">
+                <a href="#home" class="back-home" data-page="home">
+                    <i class="bi bi-arrow-right"></i> العودة إلى الرئيسية
+                </a>
+                
+                <div class="page-header">
+                    <h2>منشئ الشروط والأحكام</h2>
+                    <p>أنشئ صفحة شروط وأحكام احترافية لموقعك بسهولة. أدخل معلومات موقعك واحصل على صفحة جاهزة للاستخدام.</p>
+                </div>
+                
+                <div class="terms-tool">
+                    <input type="text" id="terms-websitename" placeholder="اسم الموقع">
+                    <input type="text" id="terms-websiteurl" placeholder="رابط الموقع">
+                    <input type="email" id="terms-email" placeholder="البريد الإلكتروني">
+                    
+                    <button id="generate-terms-btn" class="generate-btn">توليد الشروط والأحكام</button>
+                    
+                    <div id="terms-result" class="result" style="display: none;"></div>
+                    
+                    <div class="action-buttons" style="display: none;">
+                        <button id="copy-terms-btn" class="copy-btn">نسخ</button>
+                        <button id="download-terms-btn" class="download-btn">تحميل</button>
+                    </div>
+                    
+                    <p id="copied-message" class="text-center mt-2" style="color: green; display: none;">تم النسخ بنجاح!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">سياسة الخصوصية</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">من نحن</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">اتصل بنا</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal">إخلاء المسؤولية</a>
+            </div>
+            
+            <div class="copyright">
+                <p>© <span id="current-year">2023</span> موقع الأدوات المجاني. جميع الحقوق محفوظة.</p>
+                <p>جميع الأدوات مقدمة مجانًا بدون أي تكلفة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal fade" id="privacyModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">سياسة الخصوصية</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>نحن نحرص على خصوصية زوار موقعنا. لا نقوم بتخزين أو جمع أي بيانات شخصية تقدمها من خلال أدواتنا. جميع العمليات تتم على جهازك مباشرة دون إرسال بيانات إلى خوادمنا.</p>
+                    <p>نستخدم ملفات تعريف الارتباط (Cookies) فقط لتحسين تجربة المستخدم وتذكر تفضيلاتك.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="aboutModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">من نحن</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>موقع الأدوات المجاني هو منصة تقدم مجموعة من الأدوات المجانية المفيدة للمطورين والمدونين وأصحاب المواقع. نهدف إلى توفير أدوات عالية الجودة تعمل مباشرة في المتصفح دون الحاجة للتسجيل أو الدفع.</p>
+                    <p>جميع أدواتنا مصممة لتعمل على جميع الأجهزة والمتصفحات الحديثة.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">اتصل بنا</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>للاستفسارات أو المقترحات، يمكنك التواصل معنا عبر:</p>
+                    <p>البريد الإلكتروني: <strong>contact@example.com</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="disclaimerModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">إخلاء المسؤولية</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>جميع الأدوات المقدمة في هذا الموقع هي لأغراض تعليمية وإعلامية فقط. لا نتحمل أي مسؤولية عن أي أضرار قد تنتج عن استخدام هذه الأدوات.</p>
+                    <p>يجب مراجعة سياسات الخصوصية والشروط والأحكام التي نولدها مع محامٍ أو متخصص قبل استخدامها في موقعك.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/main.js"></script>    
+</body>
+</html>
