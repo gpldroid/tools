@@ -749,3 +749,395 @@ body {
 .bg-gradient-secondary {
     background: var(--secondary-gradient) !important;
 }
+
+
+
+/* ========================================= */
+/* زر العودة للأعلى ووضع النهار/الليل */
+/* ========================================= */
+
+/* 1. زر العودة للأعلى */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 20px rgba(0, 37, 195, 0.3);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--secondary-gradient);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 37, 195, 0.4);
+}
+
+.back-to-top i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover i {
+    transform: translateY(-3px);
+}
+
+/* 2. زر تبديل الوضع */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9998;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+    transform: rotate(45deg) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle i {
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.theme-toggle .bi-sun-fill {
+    color: #FFD700;
+}
+
+.theme-toggle .bi-moon-fill {
+    color: #94A3B8;
+}
+
+/* 3. وضع الليل (Dark Mode) */
+body.dark-mode {
+    --primary-color: #5474fc;
+    --secondary-color: #0025c3;
+    --primary-gradient: linear-gradient(135deg, #5474fc 0%, #0025c3 100%);
+    --secondary-gradient: linear-gradient(135deg, #0025c3 0%, #5474fc 100%);
+    --glass-bg: rgba(0, 0, 0, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, 
+        rgba(84, 116, 252, 0.95) 0%, 
+        rgba(0, 37, 195, 0.9) 100%) !important;
+    backdrop-filter: blur(20px) saturate(200%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .tool-card {
+    background: #1e293b;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .tool-card:hover {
+    box-shadow: 0 20px 50px rgba(0, 37, 195, 0.2);
+    border-color: rgba(84, 116, 252, 0.3);
+}
+
+body.dark-mode .tool-body {
+    color: #cbd5e1;
+}
+
+body.dark-mode .tool-body p {
+    color: #94a3b8;
+}
+
+body.dark-mode .page-header {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .page-header h2 {
+    color: #94a3b8;
+}
+
+body.dark-mode .page-header p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .back-home {
+    background: #334155;
+    color: #cbd5e1;
+    border-color: #475569;
+}
+
+body.dark-mode .back-home:hover {
+    background: #475569;
+    color: white;
+}
+
+body.dark-mode textarea,
+body.dark-mode input,
+body.dark-mode select {
+    background: #1e293b;
+    border-color: #475569 !important;
+    color: #e2e8f0;
+}
+
+body.dark-mode textarea:focus,
+body.dark-mode input:focus,
+body.dark-mode select:focus {
+    background: #0f172a;
+    border-color: var(--primary-color) !important;
+    color: #e2e8f0;
+}
+
+body.dark-mode .privacy-tool .result,
+body.dark-mode .robots-tool .result,
+body.dark-mode .terms-tool .result {
+    background: #1e293b;
+    border-color: #475569;
+    color: #cbd5e1;
+}
+
+body.dark-mode footer {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .modal-content {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+body.dark-mode .modal-header {
+    background: linear-gradient(135deg, #5474fc, #0025c3);
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1) brightness(150%);
+}
+
+body.dark-mode .alert-success {
+    background: linear-gradient(135deg, #064e3b, #065f46);
+    color: #a7f3d0;
+}
+
+body.dark-mode .alert-info {
+    background: linear-gradient(135deg, #164e63, #0e7490);
+    color: #a5f3fc;
+}
+
+body.dark-mode .alert-warning {
+    background: linear-gradient(135deg, #78350f, #92400e);
+    color: #fde68a;
+}
+
+body.dark-mode .alert-danger {
+    background: linear-gradient(135deg, #7f1d1d, #991b1b);
+    color: #fecaca;
+}
+
+body.dark-mode section:nth-child(even) {
+    background: rgba(30, 41, 59, 0.5);
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* 4. انتقال سلس بين الأوضاع */
+* {
+    transition: background-color 0.5s ease, 
+                border-color 0.5s ease, 
+                color 0.5s ease;
+}
+
+/* 5. تحسينات للاستجابة */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .theme-toggle {
+        top: 15px;
+        left: 15px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 576px) {
+    .back-to-top {
+        bottom: 15px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .theme-toggle {
+        top: 10px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .back-to-top i,
+    .theme-toggle i {
+        font-size: 1.25rem;
+    }
+}
+
+/* 6. تأثيرات إضافية للوضع الليلي */
+.dark-mode-transition {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 7. تحسينات للأيقونات في الوضع الليلي */
+body.dark-mode .bi,
+body.dark-mode .bx {
+    color: #cbd5e1;
+}
+
+body.dark-mode .tool-header i {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+}
+
+/* 8. تحسينات للنصوص في الوضع الليلي */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #e2e8f0;
+}
+
+/* 9. تحسينات للروابط في الوضع الليلي */
+body.dark-mode a {
+    color: #94a3b8;
+}
+
+body.dark-mode a:hover {
+    color: #cbd5e1;
+}
+
+/* 10. تحسينات للأزرار في الوضع الليلي */
+body.dark-mode .btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+body.dark-mode .btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* 11. تحسينات للكروت في الوضع الليلي */
+body.dark-mode .card {
+    background: #1e293b;
+    border-color: #475569;
+}
+
+body.dark-mode .card-header {
+    background: linear-gradient(135deg, #475569, #334155);
+}
+
+/* 12. تحسينات للجداول في الوضع الليلي */
+body.dark-mode .table {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+body.dark-mode .table thead th {
+    background: #334155;
+    color: #e2e8f0;
+    border-color: #475569;
+}
+
+body.dark-mode .table tbody tr {
+    border-color: #475569;
+}
+
+body.dark-mode .table tbody tr:hover {
+    background: #334155;
+}
+
+/* 13. تحسينات للأشكال والنماذج في الوضع الليلي */
+body.dark-mode .form-check-input {
+    background-color: #334155;
+    border-color: #475569;
+}
+
+body.dark-mode .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* 14. تحسينات للقوائم في الوضع الليلي */
+body.dark-mode .list-group-item {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-color: #475569;
+}
+
+body.dark-mode .list-group-item:hover {
+    background: #334155;
+}
+
+/* 15. تأثير توهج في الوضع الليلي */
+body.dark-mode .glow-effect {
+    box-shadow: 0 0 20px rgba(84, 116, 252, 0.3);
+}
+
+/* 16. تحسينات للشعار في الوضع الليلي */
+body.dark-mode .logo img {
+    border-color: rgba(84, 116, 252, 0.5);
+    box-shadow: 0 4px 15px rgba(84, 116, 252, 0.2);
+}
+
+/* 17. تحسينات للهيرو في الوضع الليلي */
+body.dark-mode .hero {
+    background: linear-gradient(135deg, 
+        rgba(84, 116, 252, 0.9) 0%, 
+        rgba(0, 37, 195, 0.85) 50%, 
+        rgba(84, 116, 252, 0.8) 100%),
+        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+}
