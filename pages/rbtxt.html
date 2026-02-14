@@ -1,1 +1,90 @@
-hellow
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Meta tags for SEO -->
+  <meta name="description" content="أفضل أداة عربية مجانية لتوليد ملف robots.txt لمدونات بلوجر ومواقع ووردبريس. قم بإنشاء ملف Robots مخصص لموقعك بنقرة واحدة لتحسين السيو ومنع زحف الروابط غير المرغوب فيها.">
+  <meta name="keywords" content="أداة robots.txt, توليد robots.txt, انشاء ملف robots, روبوتس تي اكس تي, ملف robots لبلوجر, ملف robots للووردبريس, محركات البحث, تهيئة المواقع, سيو, منع الزحف, robots.txt generator, blogger robots, wordpress robots">
+  <meta name="author" content="Qut">
+  
+  <title>أداة توليد ملف robots.txt</title>  
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="container" dir="rtl" style="text-align:center;">
+	
+	<!========= Robots Txt Generater Tool ========>
+<div class="at_robottxt_container"><h1>اداة توليد ملف robots.txt</h1>
+<label class="at_level" for="website-url">رابط الموقع:</label>
+<input class="at_input" type="text" id="website-url" placeholder="Enter Your Website URL with ‘https://’"><br>
+<label for="platform-select">المنصة:</label>
+<select id="platform-select">
+    <option value="blogger">Blogger</option>
+    <option value="wordpress">WordPress</option>
+</select><br>
+<button id="generate-btn">توليد</button><br><br>
+<div id="output-container" style="display:none">
+    <p id="output-text"></p>
+	<button id="copy-btn" style="display:none">نسخ المحتوى</button>
+  </div>
+</div>
+ <script>
+		 const generateBtn = document.getElementById("generate-btn");
+  const outputContainer = document.getElementById("output-container");
+  const outputText = document.getElementById("output-text");
+  const copyBtn = document.getElementById("copy-btn");
+
+  generateBtn.addEventListener("click", () => {
+    const websiteUrl = document.getElementById("website-url").value;
+    const platform = document.getElementById("platform-select").value;
+
+    // Generate the robots.txt content based on the selected platform
+    let robotsTxtContent = "";
+    if (platform === "blogger") {
+      robotsTxtContent = `User-agent: *
+Disallow: /search
+Disallow: /p/
+Disallow: /?m=1
+Sitemap: ${websiteUrl}/atom.xml?redirect=false&start-index=1&max-results=500`;
+    } else if (platform === "wordpress") {
+      robotsTxtContent = `User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Sitemap: ${websiteUrl}/sitemap.xml`;
+    }
+
+    // Display the robots.txt content and copy button
+    outputText.innerText = robotsTxtContent;
+    outputContainer.style.display = "block";
+    copyBtn.style.display = "block";
+    
+    // Add typing effect to the output text
+    const textLength = robotsTxtContent.length;
+    let i = 0;
+    const typeEffectInterval = setInterval(() => {
+      outputText.innerText = robotsTxtContent.slice(0, i);
+      i++;
+      if (i > textLength) {
+        clearInterval(typeEffectInterval);
+      }
+    }, 50);
+  });
+
+  copyBtn.addEventListener("click", () => {
+    const copyText = document.createElement("textarea");
+    copyText.value = outputText.innerText;
+    document.body.appendChild(copyText);
+    copyText.select();
+    document.execCommand("copy");
+    document.body.removeChild(copyText);
+    alert("Copied to clipboard!");
+  });
+	</script>
+	
+</div>
+</body>
+
+</html>
